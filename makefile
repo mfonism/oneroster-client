@@ -1,13 +1,13 @@
 .PHONY: format lint test all
 
 format:
-	isort src test
-	black src test
+	isort src tests
+	black src tests
 
 lint:
-	flake8 src test
+	flake8 src tests
 
 test:
-	pytest src test
+	pytest src tests
 
-all: format lint test
+all: format lint tests
