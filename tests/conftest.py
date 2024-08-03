@@ -31,3 +31,13 @@ def mock_token_response():
         m.post("https://test.com/token", json={"access_token": "a-test-access-token"})
 
         yield
+
+
+@pytest.fixture
+def client_id():
+    return "a-test-client-id"
+
+
+@pytest.fixture
+def client_secret():
+    return "a-test-client-secret"

@@ -1,4 +1,5 @@
 import os
+from typing import Any, Dict
 
 import requests
 from dotenv import load_dotenv
@@ -23,3 +24,13 @@ class Client:
         )
         response.raise_for_status()
         return response.json()["access_token"]
+
+    def get_headers(self) -> Dict[str, str]:
+        return {
+            "Authorization": f"Bearer {self.access_token}",
+            "Content-Type": "application/json",
+        }
+
+    def fetch_data(self, url: str) -> Dict[str, Any]:
+        response = requests.get(url, headers=self.get_headers())
+        return response.json()
