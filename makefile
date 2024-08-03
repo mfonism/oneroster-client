@@ -8,6 +8,6 @@ lint:
 	flake8 src tests
 
 test:
-	pytest src tests
+	pytest
 
-all: format lint tests
+all: format lint test

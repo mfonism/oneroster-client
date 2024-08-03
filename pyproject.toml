@@ -1,0 +1,10 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "--strict-markers -ra"
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = ["src"]
+src_paths = ["src", "tests"]
