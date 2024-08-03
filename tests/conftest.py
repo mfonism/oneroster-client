@@ -1,6 +1,7 @@
 import os
 
 import pytest
+import requests_mock
 
 
 @pytest.fixture(autouse=True)
@@ -22,3 +23,11 @@ def setup_environment():
         os.environ["BASE_URL"] = original_base_url
     else:
         del os.environ["BASE_URL"]
+
+
+@pytest.fixture(autouse=True)
+def mock_token_response():
+    with requests_mock.Mocker() as m:
+        m.post("https://test.com/token", json={"access_token": "a-test-access-token"})
+
+        yield
