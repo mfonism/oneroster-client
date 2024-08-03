@@ -33,4 +33,5 @@ class Client:
 
     def fetch_data(self, url: str) -> Dict[str, Any]:
         response = requests.get(url, headers=self.get_headers())
+        response.raise_for_status()
         return response.json()
