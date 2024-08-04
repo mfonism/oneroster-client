@@ -1,7 +1,6 @@
 import os
 
 import pytest
-import requests_mock
 
 
 @pytest.fixture(autouse=True)
@@ -26,11 +25,10 @@ def setup_environment():
 
 
 @pytest.fixture(autouse=True)
-def mock_token_response():
-    with requests_mock.Mocker() as m:
-        m.post("https://test.com/token", json={"access_token": "a-test-access-token"})
-
-        yield
+def mock_token_response(requests_mock):
+    requests_mock.post(
+        "https://test.com/token", json={"access_token": "a-test-access-token"}
+    )
 
 
 @pytest.fixture
