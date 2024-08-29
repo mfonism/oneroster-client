@@ -14,13 +14,20 @@ Before you embark on this journey, make sure you have these essentials:
 
 ## Setting Sail ⛵
 
-### 1. Clone the Repository
+### 1. Clone the Repository and Checkout this Branch
 
 Let's kick things off by cloning the repository to your local machine:
 
 ```bash
 git clone https://github.com/mfonism/oneroster-client.git
 cd oneroster-client
+```
+
+After cloning, make sure to check out this branch:
+
+```bash
+git fetch --all
+git switch mfonism/for-NRI-qa
 ```
 
 ### 2. Create a Virtual Environment
@@ -83,6 +90,20 @@ BASE_URL=https://your-api-url.com/api
 ```
 
 Fill in your own credentials and URLs, and you're ready to set sail! 🗺️
+
+### 7. Set Sail
+
+With everything in place, you're now ready to set sail! Run the `src/run.py` script located in the project directory:
+
+```bash
+python src/run.py
+```
+
+If `python` doesn’t work, try using `py`, `python3`, or `py3` instead. 😇
+
+Once the script has finished running, you’ll find all the information you need neatly organized in the `output_data` directory.
+
+Bon voyage! 🌊
 
 ## Troubleshooting 🕵️
 
