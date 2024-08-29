@@ -31,6 +31,10 @@ Create a cozy virtual environment to manage your dependencies:
 python -m venv venv
 ```
 
+If that doesn't work, try replacing `python` in the command with `py`, `python3`, or `py3`.
+
+If none of these options work, please ensure that [Python](https://www.python.org/downloads/) is installed on your machine and that it's included in your system's `PATH`.
+
 ### 3. Activate the Virtual Environment
 
 - **Windows**:
